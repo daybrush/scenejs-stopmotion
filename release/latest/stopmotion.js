@@ -82,8 +82,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__StopMotion__ = __webpack_require__(2);
 
 
-__WEBPACK_IMPORTED_MODULE_0__StopMotion__["b" /* default */].Item = __WEBPACK_IMPORTED_MODULE_0__StopMotion__["StopMotionItem"];
-module.exports = __WEBPACK_IMPORTED_MODULE_0__StopMotion__["b" /* default */];
+module.exports = __WEBPACK_IMPORTED_MODULE_0__StopMotion__["a" /* default */];
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)(module)))
 
 /***/ }),
@@ -120,7 +119,7 @@ module.exports = function (originalModule) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = StopMotion;
+/* harmony export (immutable) */ __webpack_exports__["a"] = StopMotion;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_scenejs__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_scenejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_scenejs__);
 
