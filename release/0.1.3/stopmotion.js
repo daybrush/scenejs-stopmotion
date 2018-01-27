@@ -7,7 +7,7 @@
 		exports["StopMotion"] = factory(require("Scene"));
 	else
 		root["StopMotion"] = factory(root["Scene"]);
-})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_3__) {
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -75,68 +75,54 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__StopMotion__ = __webpack_require__(2);
 
 
-module.exports = __WEBPACK_IMPORTED_MODULE_0__StopMotion__["a" /* default */];
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)(module)))
+var _StopMotion = __webpack_require__(1);
+
+var _StopMotion2 = _interopRequireDefault(_StopMotion);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = _StopMotion2.default;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-module.exports = function (originalModule) {
-	if (!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function () {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function () {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = StopMotion;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_scenejs__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_scenejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_scenejs__);
 
 
-const interval = 0.00001;
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = StopMotion;
 
-function stopMotion(item, start = 0, end, count) {
+var _scenejs = __webpack_require__(2);
+
+var _scenejs2 = _interopRequireDefault(_scenejs);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var interval = 0.00001;
+
+function stopMotion(item) {
+	var start = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+	var end = arguments[2];
+	var count = arguments[3];
+
 	if (!count || count < 1) {
 		return;
 	}
-	const depth = (end - start) / count;
+	var depth = (end - start) / count;
 
-	for (let i = 1; i <= count - 1; ++i) {
+	for (var i = 1; i <= count - 1; ++i) {
 		item.setFrame(start + i * depth, item.getNowFrame(start + i * depth));
 	}
-	for (let i = 1; i <= count; ++i) {
-		item.setFrame(start + i * depth - interval, item.getFrame(start + (i - 1) * depth));
+	for (var _i = 1; _i <= count; ++_i) {
+		item.setFrame(start + _i * depth - interval, item.getFrame(start + (_i - 1) * depth));
 	}
 }
 
@@ -149,45 +135,48 @@ function test(inst, target) {
 		return inst.test(target);
 	}
 }
-function StopMotion(obj, options = {}) {
-	const { include, exclude } = options;
+function StopMotion(obj) {
+	var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	var include = options.include,
+	    exclude = options.exclude;
 
-	if (obj instanceof __WEBPACK_IMPORTED_MODULE_0_scenejs___default.a) {
-		const items = obj.items;
 
-		for (const id in items) {
-			const item = items[id];
+	if (obj instanceof _scenejs2.default) {
+		var items = obj.items;
+
+		for (var id in items) {
+			var item = items[id];
 
 			if (include && !test(include, id) || exclude && test(exclude, id)) {
 				continue;
 			}
 			stopMotion(item, 0, item.getDuration(), options.count);
 		}
-	} else if (obj instanceof __WEBPACK_IMPORTED_MODULE_0_scenejs__["SceneItem"]) {
+	} else if (obj instanceof _scenejs.SceneItem) {
 		stopMotion(obj, 0, obj.getDuration(), options.count);
 	} else {
-		const scene = new __WEBPACK_IMPORTED_MODULE_0_scenejs___default.a(obj, options);
+		var scene = new _scenejs2.default(obj, options);
 
 		return StopMotion(scene, options);
 	}
 	return obj;
 }
 
-__WEBPACK_IMPORTED_MODULE_0_scenejs___default.a.prototype.setStopMotion = function setStopMotion(options) {
+_scenejs2.default.prototype.setStopMotion = function setStopMotion(options) {
 	StopMotion(this, options);
 	return this;
 };
 
-__WEBPACK_IMPORTED_MODULE_0_scenejs__["SceneItem"].prototype.setStopMotion = function setStopMotion(options) {
+_scenejs.SceneItem.prototype.setStopMotion = function setStopMotion(options) {
 	StopMotion(this, options);
 	return this;
 };
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
 /***/ })
 /******/ ]);
