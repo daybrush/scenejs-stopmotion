@@ -15,11 +15,11 @@
   "author": "Daybrush",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/daybrush/scenejs/issues"
+    "url": "https://github.com/daybrush/scenejs-stopmotion/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/daybrush/scenejs.git"
+    "url": "https://github.com/daybrush/scenejs-stopmotion.git"
   },
   "homepage": "https://daybrush.com",
   "devDependencies": {

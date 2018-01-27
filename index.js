@@ -1,4 +1,3 @@
-import StopMotion, {StopMotionItem} from "./StopMotion";
+import StopMotion from "./StopMotion";
 
-StopMotion.Item = StopMotionItem;
 module.exports = StopMotion;
