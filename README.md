@@ -1,3 +1,5 @@
+#scenejs-stopmotion
+
 ## How To Use
 ### Installation with npm
 
