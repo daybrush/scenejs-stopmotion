@@ -11,13 +11,14 @@
 <script src="https://daybrush.github.io/scenejs/release/latest/scene.js"></script>
 <script src="../release/stopmotion.js"></script>
 <script>
-    var motion = StopMotion({
+    var scene = new Scene({
         ".circle": {
             0: {"background":"rgb(100, 100, 100)", left: "0px"},
             5: {"background":"rgb(255, 100, 100)", left: "300px"}
         }
     }, {
         selector: true,
-        count: 5
-    }).play();
+    });
+    scene.setStopMotion({count: 5});
+    scene.play();
 </script>
