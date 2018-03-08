@@ -45,8 +45,11 @@ scene.play();
 
 |name|type|description|
 |---|---|---|
-|target|Scene or SceneItem| The instance to apply stop-motion|
+|target|Scene or SceneItem or object| The instance to apply stop-motion|
 |options|object| The options to apply to stop-motion|
+
+
+* target is object, retrun value's type is SceneItem.
 
 > #### options
 > * count : Number of times to apply stop motion.
