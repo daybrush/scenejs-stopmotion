@@ -1,12 +1,12 @@
 {
   "name": "scenejs-stopmotion",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Javascript StopMotion Animation Library",
   "main": "StopMotion.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && npm run release:latest",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "npm run build && npm run release:current && npm run release:latest",
+    "release": "npm run build && npm run release:current",
     "release:mkdir": "mkdir -p ./demo/release",
     "release:current": "npm run release:mkdir && rm -rf ./demo/release/$npm_package_version && cp -a ./dist/. ./demo/release/$npm_package_version",
     "release:latest": "npm run release:mkdir && rm -rf ./demo/release/latest && cp -a ./dist/. ./demo/release/latest",

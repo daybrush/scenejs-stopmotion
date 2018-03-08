@@ -43,9 +43,9 @@ export default function StopMotion(obj, options = {}) {
 	} else if (obj instanceof SceneItem) {
 		stopMotion(obj, 0, obj.getDuration(), options.count);
 	} else {
-		const scene = new Scene(obj, options);
+		const item = new SceneItem(obj, options);
 
-		return StopMotion(scene, options);
+		return StopMotion(item, options);
 	}
 	return obj;
 }

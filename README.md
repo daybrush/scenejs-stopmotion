@@ -2,16 +2,13 @@
 
 ## Usage
 ```js
-    var scene = new Scene({
-        ".circle": {
-            0: {"background":"rgb(100, 100, 100)", left: "0px"},
-            5: {"background":"rgb(255, 100, 100)", left: "300px"}
-        }
+    StopMotion({
+        0: {"background":"rgb(100, 100, 100)", left: "0px"},
+        5: {"background":"rgb(255, 100, 100)", left: "300px"}
     }, {
-        selector: true,
-    });
-    scene.setStopMotion({count: 5});
-    scene.play();
+        selector: ".circle",
+        count: 5,
+    }).play();
 ```
 ## Example
 * [StopMotion](//daybrush.github.io/scenejs-stopmotion/example/stopmotion.html)
@@ -27,6 +24,7 @@ $ npm install scenejs-stopmotion
 ### Import Library
 #### ES5
 ```html
+
 <script src="//daybrush.github.io/scenejs-stopmotion/release/latest/stopmotion.min.js">
 ```
 #### ES6
