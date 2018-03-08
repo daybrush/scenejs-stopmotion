@@ -155,9 +155,9 @@ function StopMotion(obj) {
 	} else if (obj instanceof _scenejs.SceneItem) {
 		stopMotion(obj, 0, obj.getDuration(), options.count);
 	} else {
-		var scene = new _scenejs2.default(obj, options);
+		var _item = new _scenejs.SceneItem(obj, options);
 
-		return StopMotion(scene, options);
+		return StopMotion(_item, options);
 	}
 	return obj;
 }
